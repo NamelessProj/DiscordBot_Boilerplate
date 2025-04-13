@@ -29,7 +29,30 @@ GUILD_ID=The_Discord_Server_Id
 >
 > Then make a right click on the server you want the bot in and at the bottom of the context menu, you'll find the possibility to copy the ID of the server.
 
-## Dependencies
-This project use:
-- discord.py
-- python-dotenv
+## How to run the bot
+1. Clone the repository
+```bash
+git clone https://github.com/NamelessProj/My-First-Discord-Bot.git
+```
+2. Create a virtual environment
+```bash
+python -m venv venv
+```
+3. Activate the virtual environment
+```bash
+# Windows
+venv\Scripts\activate
+# Linux
+source venv/bin/activate
+```
+4. Install the dependencies
+```bash
+pip install -r requirements.txt
+```
+5. Create a `.env` file in the root of the project and add everything from the [`.env.exemple`](/.env.exemple) file.
+6. Run the bot
+```bash
+python main.py
+```
+
+Everytime you want to run the bot, you'll have to activate the virtual environment and run the bot _(step 3 and 6)_.
