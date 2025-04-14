@@ -49,7 +49,7 @@ source venv/bin/activate
 ```bash
 pip install -r requirements.txt
 ```
-5. Create a `.env` file in the root of the project and add everything from the [`.env.exemple`](/.env.exemple) file.
+5. Create a `.env` file in the root of the project and add everything from the [`.env.example`](/.env.example) file.
 6. Run the bot
 ```bash
 python main.py
