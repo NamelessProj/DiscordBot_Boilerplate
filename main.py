@@ -4,7 +4,7 @@ from discord.ext import commands
 from discord import app_commands
 from dotenv import load_dotenv
 
-load_dotenv()
+load_dotenv(verbose=True)
 
 GUILD_ID_STR = os.getenv("GUILD_ID")
 
