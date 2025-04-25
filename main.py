@@ -4,18 +4,20 @@ from discord.ext import commands
 from discord import app_commands
 from dotenv import load_dotenv
 
+# Load environment variables from .env file
 load_dotenv(verbose=True)
 
-GUILD_ID_STR = os.getenv("GUILD_ID")
+# Getting the guild ID from the environment variable
+GUILD_ID = discord.Object(id=os.getenv("GUILD_ID")) if os.getenv("PYTHON_ENV") == "dev" else None
 
 class Client(commands.Bot):
     async def on_ready(self):
         print(f'Logged on as {self.user}!')
 
         try:
-            guild = discord.Object(id=GUILD_ID_STR)
-            synced = await self.tree.sync(guild=guild)
-            print(f'Synced {len(synced)} commands to guild {guild.id}')
+            synced = await self.tree.sync(guild=GUILD_ID)
+            display_id = GUILD_ID.id if GUILD_ID else "global"
+            print(f'Synced {len(synced)} commands to guild {display_id}')
 
         except Exception as e:
             print(f'Error syncing commands: {e}')
@@ -33,8 +35,6 @@ class Client(commands.Bot):
 intents = discord.Intents.default()
 intents.message_content = True
 client = Client(command_prefix="!", intents=intents)
-
-GUILD_ID = discord.Object(id=GUILD_ID_STR)
 
 @client.tree.command(name="hello", description="Say hello", guild=GUILD_ID)
 async def say_hello(interaction: discord.Interaction):
@@ -72,4 +72,5 @@ class View(discord.ui.View):
 async def display_buttons(interaction: discord.Interaction):
     await interaction.response.send_message(view=View())
 
+# Run the bot
 client.run(os.getenv('BOT_TOKEN'))
