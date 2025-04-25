@@ -8,7 +8,14 @@ To be able to use this exemple bot, you'll need a `.env` file.
 ```env
 BOT_TOKEN=Your_Discord_Bot_Token
 GUILD_ID=The_Discord_Server_Id
+PYTHON_ENV=dev
 ```
+
+The `BOT_TOKEN` will be used to connect the bot to your server.
+
+The `GUILD_ID` will be used to get the server where the bot is connected and to get the channel where the citations are.
+
+The `PYTHON_ENV` will be used to set the environment of the bot. It can be `dev` or `prod`. If you set it to `dev`, the bot will be only available for you. If you set it to `prod`, the bot will be available for everyone.
 
 > [!note]
 > ### How to get your Bot token ?
