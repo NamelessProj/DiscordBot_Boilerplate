@@ -4,6 +4,8 @@ from discord.ext import commands
 from discord import app_commands
 from dotenv import load_dotenv
 
+from error_handler import error_handler
+
 # Load environment variables from .env file
 load_dotenv(verbose=True)
 
@@ -72,6 +74,14 @@ class View(discord.ui.View):
 @client.tree.command(name="buttons", description="Displaying some buttons", guild=GUILD_ID)
 async def display_buttons(interaction: discord.Interaction):
     await interaction.response.send_message(view=View())
+
+# Error handling
+@say_hello.error
+@printer.error
+@embed_demo.error
+@display_buttons.error
+async def bot_error_handler(interaction: discord.Interaction, error: app_commands.AppCommandError):
+    await error_handler(interaction=interaction, error=error)
 
 # Run the bot
 client.run(os.getenv('BOT_TOKEN'))
