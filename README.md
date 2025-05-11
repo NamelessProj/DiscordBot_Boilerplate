@@ -1,4 +1,4 @@
-# My First Discord Bot
+# Discord Bot Boilerplate
 This python project give you the necessary tools to write your own Discord bot in python.
 
 I used `Python 3.12.6`.
