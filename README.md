@@ -1,7 +1,14 @@
+<p align="center">
+<img src="https://img.shields.io/badge/Python-v.3.12.6-blue" alt="Python version"/>
+</p>
+
+<p align="center">
+<img src="https://img.shields.io/github/license/NamelessProj/DiscordBot_Boilerplate" alt="licence"/>
+<img src="https://img.shields.io/github/repo-size/NamelessProj/DiscordBot_Boilerplate" alt="repo size"/>
+</p>
+
 # Discord Bot Boilerplate
 This python project give you the necessary tools to write your own Discord bot in python.
-
-I used `Python 3.12.6`.
 
 ## .env
 To be able to use this exemple bot, you'll need a `.env` file.
